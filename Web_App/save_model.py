@@ -9,14 +9,17 @@ import pandas as pd
 import numpy as np
 import joblib
 import warnings
+import os
 warnings.filterwarnings('ignore')
 
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 print("Loading data...")
-gen_df     = pd.read_csv('../Data/Plant_1_Generation_Data.csv')
-weather_df = pd.read_csv('../Data/Plant_1_Weather_Sensor_Data.csv')
+gen_df     = pd.read_csv(os.path.join(BASE_DIR, '../Data/Plant_1_Generation_Data.csv'))
+weather_df = pd.read_csv(os.path.join(BASE_DIR, '../Data/Plant_1_Weather_Sensor_Data.csv'))
 
 gen_df['DATE_TIME']     = pd.to_datetime(gen_df['DATE_TIME'])
 weather_df['DATE_TIME'] = pd.to_datetime(weather_df['DATE_TIME'])
@@ -67,8 +70,9 @@ model_info = {
         'HOUR':                  (0, 23),
     }
 }
-joblib.dump(model_info, 'model.pkl')
-print("Model saved to model.pkl")
+model_path = os.path.join(BASE_DIR, 'model.pkl')
+joblib.dump(model_info, model_path)
+print(f"Model saved to {model_path}")
 
 from sklearn.metrics import r2_score
 y_pred = model.predict(X_test)
