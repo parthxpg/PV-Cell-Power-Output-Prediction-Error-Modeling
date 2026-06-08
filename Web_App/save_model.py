@@ -71,7 +71,7 @@ model_info = {
     }
 }
 model_path = os.path.join(BASE_DIR, 'model.pkl')
-joblib.dump(model_info, model_path)
+joblib.dump(model_info, model_path, compress=3)
 print(f"Model saved to {model_path}")
 
 from sklearn.metrics import r2_score

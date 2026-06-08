@@ -39,8 +39,6 @@ env.bak/
 venv.bak/
 
 # Data and Models (large files)
-Data/Plant_1_Generation_Data.csv
-Data/Plant_1_Weather_Sensor_Data.csv
 Web_App/model.pkl
 
 # IDEs
