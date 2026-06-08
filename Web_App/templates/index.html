@@ -439,6 +439,83 @@
       margin-right: 6px;
     }
 
+    /* Responsive Improvements */
+    @media (max-width: 640px) {
+      header {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .badge {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+      }
+      main {
+        padding: 24px 16px 60px;
+      }
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 0.95rem;
+        margin-top: 10px;
+      }
+      .stats {
+        gap: 12px;
+      }
+      .stat-card {
+        flex: 1 1 calc(50% - 12px);
+        min-width: 120px;
+        padding: 16px 12px;
+      }
+      .stat-card .val {
+        font-size: 1.5rem;
+      }
+      .card {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      .card-title {
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .pv-banner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        gap: 16px;
+      }
+      .pv-banner .big-icon {
+        font-size: 2.4rem;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .tip-row {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px 14px;
+        padding: 16px;
+      }
+      .tip-num {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+      }
+      .tip-body {
+        grid-column: 2;
+      }
+      .tip-badge {
+        grid-column: 2;
+        margin-left: 0;
+        align-self: flex-start;
+        width: fit-content;
+      }
+    }
+
     footer {
       margin-top: auto;
       padding: 24px;
@@ -465,11 +542,11 @@
     <path d="m6.34 17.66-1.41 1.41"/>
     <path d="m19.07 4.93-1.41 1.41"/>
   </symbol>
-  
+
   <symbol id="icon-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
   </symbol>
-  
+
   <symbol id="icon-microscope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M6 18h8"/>
     <path d="M3 22h18"/>
@@ -479,23 +556,23 @@
     <path d="m12 12-4-4"/>
     <path d="m16 12 3-3"/>
   </symbol>
-  
+
   <symbol id="icon-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="m12 2 8 8H4z"/>
     <path d="m12 6 7 7H5z"/>
     <path d="m12 10 6 6H6z"/>
     <path d="M12 16v6"/>
   </symbol>
-  
+
   <symbol id="icon-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M3 3v18h18"/>
     <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
   </symbol>
-  
+
   <symbol id="icon-thermometer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
   </symbol>
-  
+
   <symbol id="icon-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
     <line x1="12" y1="9" x2="12" y2="13"/>
@@ -668,7 +745,7 @@
       </div>
       <p>Counter-intuitively, <em>higher panel temperature reduces efficiency</em>. Silicon panels lose
       roughly <strong>0.4–0.5% efficiency per °C</strong> above 25 °C. This is why deserts produce less
-      power than expected — peak sun comes with peak heat. Cooling systems or bifacial panels help.</p>
+      power than expected,peak sun comes with peak heat. Cooling systems or bifacial panels help.</p>
     </div>
 
     <div class="about-card">
