@@ -422,6 +422,23 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
+    /* Modern SVG Icons */
+    .icon-svg {
+      width: 1em;
+      height: 1em;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      vertical-align: middle;
+      display: inline-block;
+    }
+    .inline-icon {
+      width: 1.2em;
+      height: 1.2em;
+      vertical-align: text-bottom;
+      margin-right: 6px;
+    }
+
     footer {
       margin-top: auto;
       padding: 24px;
@@ -435,8 +452,59 @@
 </head>
 <body>
 
+<!-- Modern SVG Symbol Definitions (Lucide-based) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2"/>
+    <path d="M12 20v2"/>
+    <path d="m4.93 4.93 1.41 1.41"/>
+    <path d="m17.66 17.66 1.41 1.41"/>
+    <path d="M2 12h2"/>
+    <path d="M20 12h2"/>
+    <path d="m6.34 17.66-1.41 1.41"/>
+    <path d="m19.07 4.93-1.41 1.41"/>
+  </symbol>
+  
+  <symbol id="icon-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+  </symbol>
+  
+  <symbol id="icon-microscope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 18h8"/>
+    <path d="M3 22h18"/>
+    <path d="M14 22a7 7 0 1 0-14 0"/>
+    <path d="M14 14h2"/>
+    <path d="M14 12a4 4 0 1 0-8 0v2h8z"/>
+    <path d="m12 12-4-4"/>
+    <path d="m16 12 3-3"/>
+  </symbol>
+  
+  <symbol id="icon-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m12 2 8 8H4z"/>
+    <path d="m12 6 7 7H5z"/>
+    <path d="m12 10 6 6H6z"/>
+    <path d="M12 16v6"/>
+  </symbol>
+  
+  <symbol id="icon-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 3v18h18"/>
+    <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+  </symbol>
+  
+  <symbol id="icon-thermometer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+  </symbol>
+  
+  <symbol id="icon-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+    <line x1="12" y1="9" x2="12" y2="13"/>
+    <line x1="12" y1="17" x2="12.01" y2="17"/>
+  </symbol>
+</svg>
+
 <header>
-  <div class="logo-icon">☀️</div>
+  <div class="logo-icon"><svg class="icon-svg" style="color: #0f172a;"><use href="#icon-sun"></use></svg></div>
   <div class="logo-text">
     <h1>PV Power Predictor</h1>
     <p>Solar Output Forecasting with Machine Learning</p>
@@ -472,7 +540,7 @@
   <!-- Prediction Form -->
   <div class="card">
     <div class="card-title">
-      <span class="icon">⚡</span>
+      <span class="icon"><svg class="icon-svg" style="color: #0f172a;"><use href="#icon-zap"></use></svg></span>
       Input Parameters
     </div>
 
@@ -526,7 +594,7 @@
       </div>
 
       <button class="btn-predict" type="submit" id="submitBtn">
-        <span id="btnIcon">⚡</span>
+        <span id="btnIcon"><svg class="icon-svg"><use href="#icon-zap"></use></svg></span>
         <span id="btnText">Predict Power Output</span>
       </button>
     </form>
@@ -539,17 +607,17 @@
   <!-- Info cards -->
   <div class="info-grid">
     <div class="info-card">
-      <div class="ic">🔬</div>
+      <div class="ic"><svg class="icon-svg" style="color: var(--accent);"><use href="#icon-microscope"></use></svg></div>
       <h3>Physics-Validated</h3>
       <p>Results cross-validated against a single-diode PV model (pvlib), confirming ML accuracy within measurement noise.</p>
     </div>
     <div class="info-card">
-      <div class="ic">🌳</div>
+      <div class="ic"><svg class="icon-svg" style="color: #4ade80;"><use href="#icon-tree"></use></svg></div>
       <h3>Random Forest</h3>
       <p>300-tree tuned RF ensemble trained on 55 000 samples. Cyclic hour encoding + interaction features ensure temporal accuracy.</p>
     </div>
     <div class="info-card">
-      <div class="ic">📊</div>
+      <div class="ic"><svg class="icon-svg" style="color: var(--primary);"><use href="#icon-chart"></use></svg></div>
       <h3>Error Ceiling</h3>
       <p>All 9 model combinations converge at R² ≈ 0.9865, confirming the remaining error is irreducible environmental noise.</p>
     </div>
@@ -564,7 +632,7 @@
   </div>
 
   <div class="pv-banner">
-    <div class="big-icon">🌞</div>
+    <div class="big-icon"><svg class="icon-svg" style="color: var(--primary);"><use href="#icon-sun"></use></svg></div>
     <div>
       <h3>Photovoltaic Effect — Turning Light into Electricity</h3>
       <p>
@@ -581,7 +649,9 @@
   <div class="about-grid">
     <div class="about-card">
       <div class="about-card-head">
-        <div class="circle" style="background:rgba(245,158,11,0.15);">☀️</div>
+        <div class="circle" style="background:rgba(245,158,11,0.15);">
+          <svg class="icon-svg" style="color:var(--primary);"><use href="#icon-sun"></use></svg>
+        </div>
         <h3>Solar Irradiation</h3>
       </div>
       <p>The amount of solar energy reaching the panel surface (W/m²). Higher irradiation = more photons
@@ -591,7 +661,9 @@
 
     <div class="about-card">
       <div class="about-card-head">
-        <div class="circle" style="background:rgba(251,146,60,0.15);">🌡️</div>
+        <div class="circle" style="background:rgba(251,146,60,0.15);">
+          <svg class="icon-svg" style="color:#fb923c;"><use href="#icon-thermometer"></use></svg>
+        </div>
         <h3>Module Temperature</h3>
       </div>
       <p>Counter-intuitively, <em>higher panel temperature reduces efficiency</em>. Silicon panels lose
@@ -601,7 +673,9 @@
 
     <div class="about-card">
       <div class="about-card-head">
-        <div class="circle" style="background:rgba(56,189,248,0.15);">⚡</div>
+        <div class="circle" style="background:rgba(56,189,248,0.15);">
+          <svg class="icon-svg" style="color:var(--accent);"><use href="#icon-zap"></use></svg>
+        </div>
         <h3>AC Power Output</h3>
       </div>
       <p>The final usable power delivered to the grid (kW). This is the target variable our ML model
@@ -611,7 +685,9 @@
 
     <div class="about-card">
       <div class="about-card-head">
-        <div class="circle" style="background:rgba(34,197,94,0.15);">🔬</div>
+        <div class="circle" style="background:rgba(34,197,94,0.15);">
+          <svg class="icon-svg" style="color:#4ade80;"><use href="#icon-microscope"></use></svg>
+        </div>
         <h3>Single-Diode Model</h3>
       </div>
       <p>The physics-based model used for validation. It treats a solar cell as a diode with a
@@ -766,16 +842,16 @@
             <div class="result-unit">kilowatts (kW)</div>
           </div>`;
       } else {
-        box.innerHTML = `<div class="error-box">⚠️ Error: ${data.error}</div>`;
+        box.innerHTML = `<div class="error-box"><svg class="icon-svg inline-icon"><use href="#icon-alert"></use></svg> Error: ${data.error}</div>`;
       }
       document.getElementById('result').style.display = 'block';
     } catch (err) {
       document.getElementById('resultContent').innerHTML =
-        `<div class="error-box">⚠️ Network error: ${err.message}</div>`;
+        `<div class="error-box"><svg class="icon-svg inline-icon"><use href="#icon-alert"></use></svg> Network error: ${err.message}</div>`;
       document.getElementById('result').style.display = 'block';
     } finally {
       btn.disabled = false;
-      icon.textContent = '⚡';
+      icon.innerHTML = `<svg class="icon-svg"><use href="#icon-zap"></use></svg>`;
       txt.textContent = 'Predict Power Output';
     }
   });
