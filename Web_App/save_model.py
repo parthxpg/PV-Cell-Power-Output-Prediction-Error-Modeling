@@ -53,7 +53,7 @@ print(f"Train: {X_train.shape[0]} | Test: {X_test.shape[0]}")
 # Train the best model (Tuned RF - matches notebook results)
 print("Training Tuned RF model (this may take a minute)...")
 model = RandomForestRegressor(
-    n_estimators=300, max_depth=20,
+    n_estimators=100, max_depth=15,
     min_samples_split=2, min_samples_leaf=1,
     max_features='sqrt', random_state=42
 )

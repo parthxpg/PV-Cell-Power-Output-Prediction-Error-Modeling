@@ -37,9 +37,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
 # Data and Models (large files)
-Web_App/model.pkl
+
 
 # IDEs
 .vscode/
